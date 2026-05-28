@@ -1,3 +1,3 @@
 To use, install [BepInEx](https://github.com/BepInEx/BepInEx/releases) and place this mod's `.dll` into the plugins folder.
 
-https://github.com/user-attachments/assets/b4d4872f-2950-4d9a-9111-9ab5d7607b63
+https://github.com/user-attachments/assets/296992e7-2c14-4b17-96ce-81fbf1139e2d
