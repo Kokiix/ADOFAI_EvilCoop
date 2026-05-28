@@ -1,3 +1,4 @@
+using System.IO;
 using BepInEx;
 using BepInEx.Configuration;
 using EvilCoop;
@@ -19,6 +20,9 @@ public class ECPlugin : BaseUnityPlugin
         this.gameObject.hideFlags = HideFlags.HideAndDontSave;
 
         evilEnabled = Config.Bind("General", "Enable Evil Mode", true, "Evil mode");
+        var configWatcher = new FileSystemWatcher(Paths.ConfigPath, Path.GetFileName(Config.ConfigFilePath));
+        configWatcher.Changed += (_, _) => Config.Reload();
+        configWatcher.EnableRaisingEvents = true;
     }
 
     void OnDestroy()

@@ -6,15 +6,16 @@ static class KillAllOnDeath
 {
     static void Postfix()
     {
-        ECPlugin.Instance.Config.Reload(); // Could maybe use a FileWatcher to save some expense
-        if (!ECPlugin.evilEnabled.Value) return;
-
-        foreach (var player in scrPlayerManager.instance.allPlayers)
+        if (ECPlugin.evilEnabled.Value)
         {
-            if (player.alive)
+            foreach (var player in scrPlayerManager.instance.allPlayers)
             {
-                player.Die(overload: false, multipress: false, failMessage: "Another player has died :(", hitbox: false);
+                if (player.alive)
+                {
+                    player.Die(overload: false, multipress: false, failMessage: "Another player has died :(", hitbox: false);
+                }
             }
         }
+
     }
 }
