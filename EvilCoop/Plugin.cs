@@ -7,10 +7,12 @@ using UnityEngine;
 public class ECPlugin : BaseUnityPlugin
 {
     Harmony _harmony = new(MyPluginInfo.PLUGIN_GUID);
+    internal static ECPlugin Instance;
 
     void Awake()
     {
         _harmony.PatchAll();
+        Instance = this;
         this.gameObject.hideFlags = HideFlags.HideAndDontSave;
     }
 
@@ -18,13 +20,4 @@ public class ECPlugin : BaseUnityPlugin
     {
         _harmony.UnpatchSelf();
     }
-
-    // Debug
-    // void Update()
-    // {
-    //     if (Input.GetKeyDown(KeyCode.V))
-    //     {
-
-    //     }
-    // }
 }
