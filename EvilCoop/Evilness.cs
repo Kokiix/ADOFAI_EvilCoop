@@ -6,8 +6,8 @@ static class KillAllOnDeath
 {
     static void Postfix()
     {
-        var evil = ECPlugin.Instance.Config.Bind("General", "Enable Evil Mode", true, "Evil mode").Value;
-        if (!evil) return;
+        ECPlugin.Instance.Config.Reload(); // Could maybe use a FileWatcher to save some expense
+        if (!ECPlugin.evilEnabled.Value) return;
 
         foreach (var player in scrPlayerManager.instance.allPlayers)
         {

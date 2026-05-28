@@ -6,7 +6,7 @@
 
         <BepInExPluginGuid>com.koki.evilcoop</BepInExPluginGuid>
         <BepInExPluginName>Evil Coop</BepInExPluginName>
-        <BepInExPluginVersion>1.0.0</BepInExPluginVersion>
+        <BepInExPluginVersion>1.0.1</BepInExPluginVersion>
 
         <BepInExPluginDir>D:\SteamLibrary\steamapps\common\A Dance of Fire and Ice\BepInEx\plugins</BepInExPluginDir>
         <Thunderstore>.\.thunderstore</Thunderstore>
